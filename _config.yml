@@ -1,0 +1,28 @@
+title: 88gc11's Website
+description: A personal website powered by Jekyll and GitHub Pages
+url: https://88gc11.github.io
+baseurl: ""
+
+# 构建设置
+markdown: kramdown
+highlighter: rouge
+permalink: pretty
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - package.json
+  - package-lock.json
+  - README.md
+  - LICENSE
+
+# 主题设置
+theme: minima
+
+# 导航菜单
+header_pages:
+  - about.md
+  - contact.md
+
+# 社交链接
+github_username: 88gc11

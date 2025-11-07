@@ -1,4 +1,4 @@
-name: Publish site to GitHub Pages (main branch)
+name: Build and Deploy Jekyll site
 
 on:
   push:
@@ -6,25 +6,35 @@ on:
       - main
 
 jobs:
-  deploy:
-    name: Deploy to GitHub Pages
+  build:
     runs-on: ubuntu-latest
     permissions:
       contents: read
       pages: write
       id-token: write
+    
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Build (noop)
-        run: |
-          echo "No build step defined. Publishing repository root contents."
+      - name: Setup Ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: '3.2'
+          bundler-cache: true
+
+      - name: Install dependencies
+        run: bundle install
+
+      - name: Build site
+        run: bundle exec jekyll build
+        env:
+          JEKYLL_ENV: production
 
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v1
         with:
-          path: ./
+          path: _site/
 
       - name: Deploy to GitHub Pages
         uses: actions/deploy-pages@v1
