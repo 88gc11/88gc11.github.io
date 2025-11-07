@@ -1,14 +1,29 @@
 <header class="site-header">
   <div class="container">
-    <a class="brand" href="{{ "/" | relative_url }}">{{ site.title }}</a>
-    <button class="nav-toggle" id="navToggle" aria-expanded="false">☰</button>
+    <a class="brand" href="{{ "/" | relative_url }}">
+      {{ site.title }}
+      {% if site.subtitle %}
+        <span class="brand-subtitle">{{ site.subtitle }}</span>
+      {% endif %}
+    </a>
+    <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-label="Toggle navigation">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <line x1="3" y1="12" x2="21" y2="12"></line>
+        <line x1="3" y1="6" x2="21" y2="6"></line>
+        <line x1="3" y1="18" x2="21" y2="18"></line>
+      </svg>
+    </button>
     <nav class="site-nav" id="siteNav">
       <ul>
-        <li><a href="{{ "/" | relative_url }}">Home</a></li>
+        <li><a href="{{ "/" | relative_url }}" {% if page.url == "/" %}class="active"{% endif %}>Home</a></li>
         {% for page in site.header_pages %}
           {% assign my_page = site.pages | where: "path", page | first %}
           {% if my_page.title %}
-          <li><a href="{{ my_page.url | relative_url }}">{{ my_page.title }}</a></li>
+          <li>
+            <a href="{{ my_page.url | relative_url }}" {% if page.url == my_page.url %}class="active"{% endif %}>
+              {{ my_page.title }}
+            </a>
+          </li>
           {% endif %}
         {% endfor %}
       </ul>
