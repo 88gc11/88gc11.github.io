@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="{{ site.lang | default: 'zh-CN' }}">
+  {% include head.html %}
+  <body>
+    {% include header.html %}
+    
+    <main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        {{ content }}
+      </div>
+    </main>
+    
+    {% include footer.html %}
+    
+    <!-- 结构化数据用于文章页面 -->
+    {% if page.layout == "post" %}
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BlogPosting",
+      "headline": "{{ page.title }}",
+      "description": "{{ page.description | default: page.excerpt | strip_html | truncate: 160 }}",
+      "author": {
+        "@type": "Person",
+        "name": "{{ site.author }}"
+      },
+      "datePublished": "{{ page.date | date_to_xmlschema }}",
+      "dateModified": "{{ page.last_modified_at | default: page.date | date_to_xmlschema }}",
+      "publisher": {
+        "@type": "Organization",
+        "name": "{{ site.title }}",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "{{ site.url }}/assets/logo.png"
+        }
+      },
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "{{ site.url }}{{ page.url }}"
+      },
+      "inLanguage": "zh-CN"
+    }
+    </script>
+    {% endif %}
+  </body>
+</html>
