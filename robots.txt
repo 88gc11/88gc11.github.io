@@ -1,3 +1,9 @@
-git add robots.txt
-git commit -m "fix: update robots.txt with correct syntax and sitemap URL"
-git push origin main
+# https://88gc11.github.io/robots.txt
+User-agent: *
+Allow: /
+
+# 爬取延迟（可选）
+Crawl-delay: 1
+
+# 站点地图
+Sitemap: https://88gc11.github.io/sitemap.xml
