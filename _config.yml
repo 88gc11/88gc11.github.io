@@ -44,6 +44,10 @@ categories:
   - 心理洞察
 
 # SEO 设置
+lang: zh-CN
+timezone: Asia/Shanghai
+
+# Jekyll SEO Tag 配置
 twitter:
   username: 
   card: summary_large_image
@@ -51,7 +55,46 @@ social:
   name: 孤身纵四海
   links:
     - https://github.com/88gc11
-    
-# 评论系统设置（如果需要）
-# comments:
-#   provider: giscus
+
+# Open Graph 默认图片
+defaults:
+  - scope:
+      path: ""
+    values:
+      image: /assets/og-image.jpg
+
+# 网站地图设置
+sitemap:
+  filename: /sitemap.xml
+  exclude:
+    - "/404.html"
+    - "/assets/"
+    - "/drafts/"
+  include_posts:
+    - "/"
+  change_frequency_name: "daily"
+  priority_name: "0.8"
+
+# Feeds 设置
+feed:
+  path: /feed.xml
+  posts_limit: 20
+  excerpt_only: true
+
+# 压缩设置
+compress_html:
+  clippings: all
+  comments: ["<!-- ", " -->"]
+  endings: all
+  ignore:
+    envs: [development]
+  blanklines: false
+  profile: false
+  startings: [html, head, body]
+
+# 插件设置
+plugins:
+  - jekyll-seo-tag
+  - jekyll-sitemap
+  - jekyll-feed
+  - jekyll-paginate

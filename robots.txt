@@ -1,0 +1,8 @@
+User-agent: *
+Allow: /
+Sitemap: {{ site.url }}/sitemap.xml
+
+# Block specific paths
+Disallow: /assets/raw/
+Disallow: /drafts/
+Disallow: /private/
