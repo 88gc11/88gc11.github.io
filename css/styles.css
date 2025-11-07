@@ -1,0 +1,25 @@
+/* 基础样式（移动优先） */
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{height:100%}
+body{font-family:Segoe UI, Roboto, "Helvetica Neue", Arial, "PingFang SC", "Microsoft Yahei", sans-serif;line-height:1.6;color:#222;background:#f7f7f7}
+.container{width:90%;max-width:1100px;margin:0 auto}
+.site-header{background:#fff;border-bottom:1px solid #e6e6e6}
+.site-header .container{display:flex;align-items:center;justify-content:space-between;padding:0.75rem 0}
+.brand{font-weight:700;font-size:1.125rem;color:#111;text-decoration:none}
+.nav-toggle{background:transparent;border:0;font-size:1.25rem;cursor:pointer;display:inline-block}
+.site-nav{display:none}
+.site-nav ul{list-style:none;display:flex;gap:1rem}
+.site-nav a{text-decoration:none;color:#333;padding:0.5rem}
+.hero{padding:3rem 0;background:linear-gradient(135deg,#6fc3df 0%,#9be7c4 100%);color:#fff;text-align:center}
+.hero .btn{display:inline-block;margin-top:1rem;padding:0.6rem 1rem;background:rgba(255,255,255,0.15);color:#fff;border-radius:6px;text-decoration:none}
+.content{padding:2rem 0;background:#fff;margin-top:1rem}
+.site-footer{padding:1rem 0;text-align:center;color:#666;margin-top:2rem}
+
+/* 大屏样式 */
+@media(min-width:700px){
+  .nav-toggle{display:none}
+  .site-nav{display:block}
+}
+
+/* 可复用类 */
+.btn{background:#0078d4;color:#fff;padding:0.5rem 0.75rem;border-radius:6px;display:inline-block;text-decoration:none}
