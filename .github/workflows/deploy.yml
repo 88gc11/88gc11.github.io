@@ -1,4 +1,4 @@
-name: Deploy to GitHub Pages
+name: Publish site to GitHub Pages (main branch)
 
 on:
   push:
@@ -7,14 +7,24 @@ on:
 
 jobs:
   deploy:
+    name: Deploy to GitHub Pages
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      pages: write
+      id-token: write
     steps:
-      - name: Checkout
+      - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Deploy to GitHub Pages
-        uses: peaceiris/actions-gh-pages@v3
+      - name: Build (noop)
+        run: |
+          echo "No build step defined. Publishing repository root contents."
+
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v1
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_branch: gh-pages
-          publish_dir: ./
+          path: ./
+
+      - name: Deploy to GitHub Pages
+        uses: actions/deploy-pages@v1
