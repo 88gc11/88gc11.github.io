@@ -1,14 +1,44 @@
 ---
 layout: default
-title: About
+title: 关于
 permalink: /about/
 ---
 
-## About
+<div class="post-content" markdown="1">
 
-This is the base Jekyll theme. You can find out more info about customizing your Jekyll theme, as well as basic Jekyll usage documentation at [jekyllrb.com](https://jekyllrb.com/)
+# 人性的暗室
 
-You can find the source code for this site at:
-{% if site.github_username %}
-[github.com/{{ site.github_username }}/{{ site.github_username }}.github.io](https://github.com/{{ site.github_username }}/{{ site.github_username }}.github.io)
-{% endif %}
+剥离一切社会标签、道德粉饰与情感滤镜。
+这里只进行一场关于人性的赤裸解剖。
+
+爱、权力、欲望、恐惧、自私与崇高……皆是标本。
+我用理性作刀，以洞察为镜，探照人类行为最深处的密码。
+
+不提供慰藉，只呈现真实。
+欢迎，来到人性的暗室。
+
+## 写作主题
+
+本博客关注以下几个核心领域：
+
+- **人性剖析**: 探讨人类行为背后的本质动机
+- **社会观察**: 透过表象看清社会运作的底层逻辑
+- **哲学思考**: 对人类存在的根本问题进行思辨
+- **心理洞察**: 解析人类心理的复杂机制
+
+## 阅读建议
+
+1. 保持开放的心态，但不要轻易认同
+2. 思考比认同更重要
+3. 真相可能令人不适，但值得直面
+4. 这里的观点供思考，而非奉为圭臬
+
+## 订阅方式
+
+- RSS订阅
+- [GitHub](https://github.com/{{ site.github_username }})
+- 电子邮件订阅（即将推出）
+
+> "认识你自己" —— 德尔斐神庙铭文
+
+</div>

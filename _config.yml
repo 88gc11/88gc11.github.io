@@ -1,12 +1,14 @@
-title: 88gc11's Website
-description: A personal website powered by Jekyll and GitHub Pages
+title: 孤身纵四海
+subtitle: 人性解剖室
+description: 剥离一切社会标签、道德粉饰与情感滤镜，这里只进行一场关于人性的赤裸解剖。
 url: https://88gc11.github.io
 baseurl: ""
+author: 孤身纵四海
 
 # 构建设置
 markdown: kramdown
 highlighter: rouge
-permalink: pretty
+permalink: /:year/:month/:title/
 exclude:
   - Gemfile
   - Gemfile.lock
@@ -18,11 +20,38 @@ exclude:
 
 # 主题设置
 theme: minima
+dark_mode: true
 
 # 导航菜单
 header_pages:
   - about.md
-  - contact.md
+  - archive.md
+  - topics.md
 
 # 社交链接
 github_username: 88gc11
+
+# 自定义设置
+show_excerpts: true
+excerpt_separator: <!--more-->
+future: true
+
+# 分类设置
+categories:
+  - 人性剖析
+  - 社会观察
+  - 哲学思考
+  - 心理洞察
+
+# SEO 设置
+twitter:
+  username: 
+  card: summary_large_image
+social:
+  name: 孤身纵四海
+  links:
+    - https://github.com/88gc11
+    
+# 评论系统设置（如果需要）
+# comments:
+#   provider: giscus
