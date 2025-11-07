@@ -1,9 +1,3 @@
-User-agent: *
-Allow: /
-
-# 如果需要保护某些目录
-Disallow: /admin/
-Disallow: /tmp/
-Disallow: /secret/
-
-Sitemap: {{ site.url }}/sitemap.xml
+git add robots.txt
+git commit -m "fix: update robots.txt with correct syntax and sitemap URL"
+git push origin main
